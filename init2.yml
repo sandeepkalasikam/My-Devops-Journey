@@ -1,0 +1,21 @@
+kind: Pod ### kind is directly proportional to resource kubectl api-resources
+apiVersion: v1 ## pre-defined which should match with resource
+metadata: ## Describing about the object
+  name : inti-container2
+  namespace : default
+  labels: # is like tag to specify some thing filtering & is like a tag we must assing a label to every pod is mandotary
+   role : app # Both key and value or our choice
+spec:
+  initContainers:
+   - name : initcon1 ## init cont1 starts  first and must complete sucessfully
+     image: ubuntu
+     command: ["bash", "-c", "sleep 30"]
+   - name : initcont2 ## once initcon1 complete sucessfully and initcont2 will start
+     image: centos
+     command: ["bash", "-c", "sleep 30"]
+  containers: ## all the init contact must be excuited first
+   - name : cont1
+     image: nginx
+   - name : cont2
+     image: tomcat
+
