@@ -1,0 +1,17 @@
+#podz.yml
+kind: Pod ### kind is directly proportional to resource kubectl api-resources
+apiVersion: v1 ## pre-defined which should match with resource
+metadata: ## Describing about the object 
+  name : podz
+  namespace : teama
+  labels: # is like tag to specify some thing filtering & is like a tag we must assing a label to every pod is mandotary
+   role : app # Both key and value or our choice 
+spec:
+  containers:
+    - name : cont1
+      image: nginx
+    - name : cont2
+      image: tomcat
+    - name : ucont
+      image: ubuntu
+      command: ["bash", "-c", "sleep 600"]   

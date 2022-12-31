@@ -1,0 +1,16 @@
+kind : pod
+apiVersion: v1
+metadata:
+   name : singlecont
+   namespaces: teama
+   label:
+    role : app
+spec:
+ containers:
+    --name : cont1
+      image: nginx
+    --name : cont2
+      image: tomcat
+    --name: cont3
+      image: Ubuntu 
+      command: {"bash" "-c" sleep 600}    

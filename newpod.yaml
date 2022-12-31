@@ -1,0 +1,13 @@
+kind: Pod
+apiVersion: v1
+metadata:
+  name : newpodexpose
+  namespace : default
+  labels:
+   roleii : web
+spec:
+  containers:
+    - name : newpod
+      image: nginx
+      ports:
+      - containerPort: 80   
