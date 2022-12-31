@@ -1,0 +1,7 @@
+kind: Pod ### kind is directly proportional to resource kubectl api-resources
+apiVersion: v1 ## pre-defined which should match with resource
+metadata: ## Describing about the object 
+  name : Pod
+  namespace : default
+  labels: # is like tag to specify some thing filtering & is like a tag we must assing a label to every pod is mandotary
+   role : app
