@@ -1,0 +1,22 @@
+kind: ReplicaSet # kind of resouce we are creating 
+apiVersion: apps/v1
+metadata:
+   name : myapp
+   namespace: default        
+spec:
+ replicas : 3 # like manager . if we do not metion the replicas it create one replica
+ selector: # selector will try to acquire with label mentioned manager assinged to resouse & IT is not recommended to have pod individual
+  matchLabels:
+    run: webapp 
+ template : ## is pod definition 
+    metadata:
+     #name: myapp In case we are creating #1000 names cannot be given .So kubenetes give random name
+      labels:
+       run : webapp
+    spec: 
+      #initContainers
+      containers:
+       - name : cont1
+         image: nginx
+       - name : cont2
+         image: tomcat 

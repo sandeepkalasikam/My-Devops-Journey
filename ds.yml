@@ -1,0 +1,18 @@
+kind : DaemonSet ## kubectl api-resource
+apiVersion: apps/v1
+metadata:
+  name : logapp
+  namespace: default
+  # labels # are optional
+spec:
+   selector:
+    matchLabels:
+     role : log  
+   template:
+     metadata:
+       labels:
+        role : log
+     spec:
+      containers:
+       - name : cont1
+         image : nginx  
