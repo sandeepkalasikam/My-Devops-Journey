@@ -1,3 +1,9 @@
+### How DaemonSet is different from replica set .
+#creates number of pods based on availae nodes on the cluste  pods = number of nodes
+#deamon set ensures there is one pod /node only t will not allow moe than one pod in a node
+#DaemonSet auto scaleup when node is added
+#DeamoSet auto scale down when node is down/deleed
+
 kind : DaemonSet ## kubectl api-resource
 apiVersion: apps/v1
 metadata:
